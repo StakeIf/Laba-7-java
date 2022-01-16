@@ -14,6 +14,45 @@ public Coin()
 	y = 0;
 }
 
+public Coin(int x)
+{
+    this.x = x;
+    y = 0;
+}
+
+public Coin(int x, int y)
+{
+    this.x = x;
+    this.y = y;
+}
+
+public void SetX(int x) {
+    this.x = x;
+}
+public void SetY(int y) {
+    this.y = y;
+}
+
+public void Set(int x, int y) {
+	this.x = x;
+    this.y = y;
+}
+
+// Поверхностная копия
+    public Coin ShallowCopy()
+    {
+        return (Coin)this;
+    }
+
+    // Конструктор копирования (Глубокая копия)
+    public Coin(Coin otherCoin)
+    {
+        x = otherCoin.x;
+        y = otherCoin.y;
+    }
+
+
+
 //Ф-ии получения данных из полей
 public int GetX()
 {
@@ -22,13 +61,6 @@ public int GetX()
 public int GetY()
 {
 	return y;
-}
-
-//Задание полей класса Монета
-public void Set(int xi, int yi)
-{
-	x = xi;
-	y = yi;
 }
 
 //Ввод данных о Монете

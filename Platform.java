@@ -13,6 +13,31 @@ public Platform()
 	height = 0;
 }
 
+// Конструктор с одним параметром
+public Platform(int height)
+{
+    angle = 0;
+    this.height = height;
+}
+
+// Конструктор с параметрами
+public Platform(int angle, int height)
+{
+    this.angle = angle;
+    this.height = height;
+}
+
+//Установка угла
+public void SetAngle(int angle) 
+{
+    this.angle = angle;
+}
+//Установка длины
+public void SetHeight(int height)
+{
+    this.height = height;
+}
+
 //Ф-ии получения данных из полей
 public int GetAngle()
 {
@@ -21,13 +46,6 @@ public int GetAngle()
 public int GetHeight()
 {
 	return height;
-}
-
-//Задание полей класса Платформа
-public void Set(int anglei, int heighti)
-{
-	angle = anglei;
-	height = heighti;
 }
 
 //Ввод данных о Платформе

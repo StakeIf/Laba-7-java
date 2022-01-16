@@ -15,6 +15,35 @@ public Ball()
 	y = 0;
 	Name = "";
 }
+public Ball(String name)
+{
+    x = 0;
+    y = 0;
+    Name = name;
+}
+
+public Ball(int x_, int y_, String name)
+{
+    x = x_;
+    y = y_;
+    Name = name;
+}
+
+//Установщики значений
+public void SetX(int x_) 
+{
+    x = x_;
+}
+
+public void SetY(int y_)
+{
+    y = y_;
+}
+
+public void SetName(String name)
+{
+    Name = name;
+}
 
 //Ф-ии получения данных из полей
 public int GetX()

@@ -5,13 +5,123 @@ public class Start
 	public static void main(String[]args)
 	{
 	Scanner in = new Scanner(System.in);
-
+/*
 		System.out.println("\nApp demo:\n");
 
 		Ball MyBall = new Ball();
 		Platform MyPlatform = new Platform();
 		Rating MyRating = new Rating();
 		Button MyButton = new Button();
+*/
+
+		Coin[] MyArrayCoins = new Coin[5];
+		for (int i = 0; i < 5; i = i + 1)
+		{
+			MyArrayCoins[i] = new Coin();
+			MyArrayCoins[i].RandXY();
+		}
+
+	System.out.println("Lab 9\n");
+	System.out.println("Ball: ");
+	Ball Ball1 = new Ball();
+	Ball Ball2 = new Ball("Param");
+	Ball Ball3 = new Ball(1, 1, "One");
+
+	System.out.println( "1) Without parameters:");
+	Ball1.Display();
+	System.out.println( "2) One parameter:");
+	Ball2.Display();
+	System.out.println( "3) With parameters:");
+	Ball3.Display();
+
+	//////////
+	System.out.println("\nPlatform: ");
+	Platform Platform1 = new Platform();
+	Platform Platform2 = new Platform(32);
+	Platform Platform3 = new Platform(31, 33);
+
+	System.out.println( "1) Without parameters:");
+	Platform1.Display();
+	System.out.println( "2) One parameter:");
+	Platform2.Display();
+	System.out.println( "3) With parameters:");
+	Platform3.Display();
+
+	/////////////
+	System.out.println("\nCoin: ");
+	Coin Coin1 = new Coin();
+	Coin Coin2 = new Coin(2);
+	Coin Coin3 = new Coin(5,6);
+
+	System.out.println( "1) Without parameters:");
+	Coin1.Display();
+	System.out.println( "2) One parameter:");
+	Coin2.Display();
+	System.out.println( "3) With parameters:");
+	Coin3.Display();
+
+	/////////////
+
+	System.out.println("\nRating: ");
+	Rating Rating1 = new Rating();
+	Rating Rating2 = new Rating(10);
+	Rating Rating3 = new Rating(3, MyArrayCoins);
+
+	System.out.println( "1) Without parameters:");
+	Rating1.Display();
+	System.out.println( "2) One parameter:");
+	Rating2.Display();
+	System.out.println( "3) With parameters:");
+	Rating3.Display();
+
+	///////////
+	System.out.println("\nButton: ");
+	Button Button1 = new Button();
+	Button Button2 = new Button(true);
+
+	System.out.println( "1) Without parameters:");
+	Button1.Display();
+	System.out.println( "2) One parameter:");
+	Button2.Display();
+	
+	///////////////
+	Coin[] CoinArr = new Coin[3];
+		for (int j = 0; j < 3; j++)
+			CoinArr[j] = new Coin(j);
+		System.out.println("\nInitalization massiv:");
+		for (int j = 0; j < 3; j++)
+			CoinArr[j].Display();
+		System.out.println("\n\n");
+
+	/////////////
+
+		System.out.println("\nDifference between deep and shallow copy:");
+		Coin CoinTestCopy1 = new Coin(4,4), CoinTestCopy2 = new Coin(5,5);
+
+		CoinTestCopy2 = CoinTestCopy1;
+
+		System.out.println("Shallow copy 1 in 2:");
+		CoinTestCopy1.Display();
+		CoinTestCopy2.Display();
+		System.out.println("\nChange 1st object:");
+		CoinTestCopy1.Set(3,3);
+		CoinTestCopy1.Display();
+		CoinTestCopy2.Display();
+
+		CoinTestCopy1.Set(4,4);
+		CoinTestCopy2 = new Coin(CoinTestCopy1);
+
+		System.out.println("\nDeep copy 1 in 2:");
+		CoinTestCopy1.Display();
+		CoinTestCopy2.Display();
+		System.out.println("\nChange 1st object:");
+		CoinTestCopy1.Set(3,3);
+		CoinTestCopy1.Display();
+		CoinTestCopy2.Display();
+
+
+
+
 /*
 		System.out.println("6) Coins array:");
 		Coin[] MyArrayCoins = new Coin[5];
@@ -27,7 +137,7 @@ public class Start
 		Coin CoinAux = new Coin();
 		CoinAux = MyRating.GetCoin(3);
 		CoinAux.Display();
-*/
+
 		System.out.println("Laba 8) Static: ");
 		// Формирование объектов класса Button:
 		Button A = new Button(true);
@@ -37,7 +147,7 @@ public class Start
 
 		A.NewList();
 		
-		System.out.println("New list: ");
+		System.out.println("New list: \n");
 		// Вызов статической компанентной функции:
 		D.reprint();
 
@@ -48,13 +158,13 @@ public class Start
 		System.out.println("Reprint: ");
 		// Печать в обратном порядке значений элементов списка:
 		D.reprint();
-/*
+
 		System.out.println("9) String: ");
 		MyBall.Set(0,0,"BOSS");
 		MyBall.Display();
 		MyBall.ModernName();
 		MyBall.Display();
-*/
+
 
 
 

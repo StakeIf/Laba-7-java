@@ -11,10 +11,37 @@ public class Rating
 public Rating()
 {
 	points = 0;
-	Coin C = new Coin();
-	C.Set(0,0);
+	Coin C = new Coin(0,0);
 	for (int i = 0; i < 5; i++)
 		ArrayCoins[i] = C;
+}
+
+public Rating(int points)
+{
+    this.points = points;
+    Coin C = new Coin();
+    for (int i = 0; i < 5; i++)
+        ArrayCoins[i] = C;
+}
+
+public Rating(int pointsi, Coin[] array)
+{
+    points = pointsi;
+    Coin C= new Coin();
+    for (int i = 0; i < 5; i++)
+        ArrayCoins[i] = array[i];
+}
+
+public void SetPoint(int pointsi)
+{
+    points = pointsi;
+}
+
+public void SetCoinArray(Coin[] array)
+{
+    Coin C;
+    for (int i = 0; i < 5; i++)
+        ArrayCoins[i] = array[i];
 }
 
 //Ф-ии получения данных из полей
@@ -30,18 +57,6 @@ public Coin GetCoin (int i)
 		C = ArrayCoins[i];
 	return C;
 }
-
-
-//Задание полей класса 
-public void Set(int pointsi, Coin array[])
-{
-	points = pointsi;
-		for (int i = 0; i < 5; i++)
-			ArrayCoins[i] = array[i];
-}
-
-
-
 
 //Вывод рейтинга
 public void Display()
