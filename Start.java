@@ -5,6 +5,28 @@ public class Start
 	public static void main(String[]args)
 	{
 	Scanner in = new Scanner(System.in);
+
+	Coin[] Coin1 = new Coin[3]; 
+	Coin [][] Coin2 = new Coin[2][2];
+
+		Coin1[0] = new Coin(3,3);
+		Coin1[1] = new Coin(4,4);
+		Coin1[2] = new Coin(5,5);
+
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 2; j++)
+				Coin2[i][j] = new Coin(j,j+2);
+
+		// Вывод
+		System.out.println("One dimensional array [3]");
+		for (int i = 0; i < 3; i++)
+			Coin1[i].Display();
+
+		System.out.println("\nDvumernyy massiv [2][2]");
+		for (int i = 0; i < 2; i++)
+			for (int j = 0; j < 2; j++)
+				Coin2[i][j].Display();
+
 /*
 		System.out.println("\nApp demo:\n");
 
@@ -12,7 +34,7 @@ public class Start
 		Platform MyPlatform = new Platform();
 		Rating MyRating = new Rating();
 		Button MyButton = new Button();
-*/
+
 
 		Coin[] MyArrayCoins = new Coin[5];
 		for (int i = 0; i < 5; i = i + 1)
