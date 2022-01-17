@@ -6,6 +6,20 @@ public class Start
 	{
 	Scanner in = new Scanner(System.in);
 
+	System.out.println("Laba 10\n");
+	System.out.println("Value in segment [0;15]\n");
+	Rating Rating1 = new Rating(-5);
+	System.out.println("Present value: " + Rating1.GetPoints());
+	Rating1.SetPoint(16);
+	System.out.println("Present value: " + Rating1.GetPoints());
+	Rating1.SetPoint(14);
+	System.out.println("Present value: " + Rating1.GetPoints());
+	Rating1.PlusRating();
+	System.out.println("Present value: " + Rating1.GetPoints());
+	Rating1.PlusRating();
+	System.out.println("Present value: " + Rating1.GetPoints());
+
+/*
 	Coin[] Coin1 = new Coin[3]; 
 	Coin [][] Coin2 = new Coin[2][2];
 

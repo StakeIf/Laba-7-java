@@ -18,30 +18,52 @@ public Rating()
 
 public Rating(int points)
 {
-    this.points = points;
-    Coin C = new Coin();
+	this.points = 0;
+	if (IsRightRating(points))
+		this.points = points;    
+
+	Coin C = new Coin();
     for (int i = 0; i < 5; i++)
         ArrayCoins[i] = C;
 }
 
+//Конструктор с параметрами
 public Rating(int pointsi, Coin[] array)
 {
-    points = pointsi;
-    Coin C= new Coin();
+    points = 0;
+	if (IsRightRating(pointsi))
+		points = pointsi;   
+
+	Coin C= new Coin();
     for (int i = 0; i < 5; i++)
         ArrayCoins[i] = array[i];
 }
 
+//Задание поля Очки
 public void SetPoint(int pointsi)
 {
-    points = pointsi;
+		points = 0;
+		if (IsRightRating(pointsi))
+			points = pointsi;
 }
 
+//Задания поля Монеты
 public void SetCoinArray(Coin[] array)
 {
     Coin C;
     for (int i = 0; i < 5; i++)
         ArrayCoins[i] = array[i];
+}
+
+//Задание полей класса 
+public void Set(int pointsi, Coin[] array)
+{
+	points = 0;
+	if (IsRightRating(pointsi))
+		points = pointsi;
+
+	for (int i = 0; i < 5; i++)
+		ArrayCoins[i] = array[i];
 }
 
 //Ф-ии получения данных из полей
@@ -67,8 +89,29 @@ public void Display()
 		ArrayCoins[i].Display();
 }
 
-public void PlusRating(){
-	points = points + 1;
+public void PlusRating()
+{
+	points++;
+	if (IsRightRating(points) == false)
+			points--;
 }
 
+// Проверка числа на подходяее для оценки
+    public boolean IsRightRating(int rat)
+    {
+        boolean res = true;
+        try                                                    // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+        {
+            if (rat < 0 || rat > 15)                          // Если пользователь ввел неверное число, то выбрасывается исключение
+                throw new Exception("Incorrect value.");       // выбрасывается исключение типа const char*
+            return res;
+        }
+        catch (Exception ex)           						   // обработчик исключений типа const char*
+        {
+        	System.out.println("Error: " + ex.getMessage() + '\n');
+            res = false;
+            return res;
+        }
+        //return res;
+    }
 }
