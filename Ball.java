@@ -1,10 +1,8 @@
 import java.util.Scanner;
 
 //Мяч
-public class Ball
+public class Ball extends Point implements ICoord
 {
-	private int x = 0;
-	private int y = 0;
 	private String Name = "";
 
 
@@ -24,8 +22,7 @@ public Ball(String name)
 
 public Ball(int x_, int y_, String name)
 {
-    x = x_;
-    y = y_;
+    super(x_,y_);
     Name = name;
 }
 
@@ -44,6 +41,12 @@ public void SetName(String name)
 {
     Name = name;
 }
+public void Set(int x, int y, String name)
+{
+	this.x = x;
+	this.y = y;
+    Name = name;
+}
 
 //Ф-ии получения данных из полей
 public int GetX()
@@ -59,26 +62,16 @@ public String GetName()
 	return this.Name;
 }
 
-//Задание полей класса Мяч
-public void Set(int xi, int yi, String Namei)
-{
-	x = xi;
-	y = yi;
-	this.Name = Namei;
-}
-
 //Ввод данных о Мяче
-public void InpData()
+@Override public void InpData()
 {
-	String os = System.getProperty("os.name");
-	String consoleEncoding = System.getProperty("console.encoding", os.startsWith("Windows") ? "cp866":"utf-8");
-	Scanner in = new Scanner(System.in, consoleEncoding);
+	Scanner in = new Scanner(System.in);
 
-	System.out.println("Input x");
+	System.out.println("Input x of Ball");
 	x = in.nextInt();
-	System.out.println("Input y");
+	System.out.println("Input y of Ball");
 	y = in.nextInt();
-	System.out.println("Input Name");
+	System.out.println("Input Name of Ball");
 	String s = in.nextLine();
 	Name = in.nextLine();
 	in.close();
@@ -114,5 +107,31 @@ public void ModernName()
 {
 	Name = "Ball " + Name;
 }
+
+@Override public String Who()
+{
+	return "Ball ";
+}
+
+// Метод ToString
+        public String ToString()
+        {
+            return ("X = " + x + " Y = " + y + " Name - " + Name);
+        }
+
+// Поверхностная копия
+public Ball ShallowCopy()
+{
+    return (Ball)this;
+}
+
+
+    // Конструктор копирования (Глубокая копия)
+    public Ball(Ball other)
+    {
+        x = other.x;
+        y = other.y;
+        Name = other.Name;
+    }
 
 }

@@ -6,6 +6,78 @@ public class Start
 	{
 	Scanner in = new Scanner(System.in);
 
+/*
+	Point Point1 = new Point(2, 2);
+
+	System.out.println("3)Method overload... ");
+
+	Point1.Display();
+	Ball1.Display();
+	Point1.MyLocation();
+	Ball1.MyLocation();
+
+
+	System.out.println("6) toString\n");
+	System.out.println("Data Ball: " + Ball1.ToString()); 
+	
+
+	System.out.println("8) abstract: \n");
+	Ball Ball1 = new Ball(1, 1, "One");
+	Ball1.InpData();
+	Ball1.Display();
+	
+
+	Ball Ball1 = new Ball(2,2, "Dva");
+	    Coin Coin1 = new Coin();
+	    Coin1.SetX(1);
+	    Coin1.SetY(1);
+
+		System.out.println("9) Interface");		
+		
+		Ball1.Display();
+		Coin1.Display();
+
+		System.out.println();
+
+		System.out.println(Ball1.Who());
+		System.out.println(Coin1.Who());
+*/
+		System.out.println("10) Deep and shalow copy:");
+		Ball Ball1 = new Ball(9,9, "Nine");
+		Ball Ball2 = new Ball(7,7, "Seven");
+
+		Ball2 = Ball1;
+
+		System.out.println("Shalow copy 1st in 2st:");
+		Ball1.Display();
+		Ball2.Display();
+		System.out.println("");
+		System.out.println("Change 1st Object:");
+		Ball1.Set(3,3, "Three");
+		Ball1.Display();
+		Ball2.Display();
+		System.out.println("");
+
+		Ball1.Set(5,5, "Five");
+		Ball2 = new Ball(Ball1);
+
+		System.out.println("Deep copy 1st in 2st:");
+		Ball1.Display();
+		Ball2.Display();
+		System.out.println("");
+		System.out.println("Change 1st Object:");
+		Ball1.Set(4,4, "Four");
+		Ball1.Display();
+		Ball2.Display();
+		System.out.println("\n\n");
+
+
+	//Point point1 = new Point();
+	//point1.x = 0;
+	//System.out.println(point1.x);
+
+
+/*
 	System.out.println("Laba 10\n");
 	System.out.println("Value in segment [0;15]\n");
 	Rating Rating1 = new Rating(-5);

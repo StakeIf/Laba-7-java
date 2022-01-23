@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 //Монета
-public class Coin
+public class Coin extends Point implements ICoord
 {
 	private int x = 0;
 	private int y = 0;
@@ -87,6 +87,11 @@ public void RandXY()
 public void Display()
 {
 	System.out.println("X = " + x + " Y = " + y);
+}
+
+@Override public String Who()
+{
+	return "Coin ";
 }
 
 }
